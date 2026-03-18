@@ -303,6 +303,8 @@ a {
     font-size: 1.1rem;
     color: #1a0a00;
     box-shadow: 0 0 14px rgba(201, 168, 76, 0.5);
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .nav-menu {
@@ -392,13 +394,13 @@ a {
 #hero {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     text-align: center;
     position: relative;
     z-index: 2;
     overflow: hidden;
-    padding: 0px 0px;
+    padding: 50px 0px;
     background:
         radial-gradient(ellipse 70% 60% at 50% 30%, rgba(124, 58, 237, 0.2) 0%, transparent 70%),
         radial-gradient(ellipse 50% 40% at 20% 80%, rgba(201, 168, 76, 0.08) 0%, transparent 60%),
@@ -492,7 +494,7 @@ a {
 }
 
 .hero-problems span {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     color: var(--muted);
     display: flex;
     align-items: center;
@@ -516,6 +518,16 @@ a {
     justify-content: center;
     flex-wrap: wrap;
     animation: fade-up 0.8s 0.45s ease both;
+}
+.hero-btns .btn-call i{
+    color: #7f1414;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+.hero-btns .btn-wa i{
+    color: #128c5e;
+    font-weight: 900;
+    font-size: 1.7rem;
 }
 
 .hero-scroll {
