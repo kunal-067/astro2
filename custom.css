@@ -135,3 +135,14 @@
 #videoGallery iframe{
     border-radius: .5rem;
 }
+
+
+@media (max-width:510px) {
+    #nav2{
+        gap: 10px;
+    }
+    #nav2 .serviceIcon{
+        font-size: .7rem;
+        padding: .2rem;
+    }
+}
