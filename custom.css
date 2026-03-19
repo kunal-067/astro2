@@ -124,7 +124,7 @@
 }
 
 #videoGallery .videoContainer div{
-    padding: 5px;
+    padding: 2px;
     background-color: var(--gold);
     border-radius: 0.5rem;
     overflow: hidden;
@@ -134,6 +134,7 @@
 }
 #videoGallery iframe{
     border-radius: .5rem;
+    min-width: 100%;
 }
 
 
