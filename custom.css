@@ -139,10 +139,16 @@
 
 @media (max-width:510px) {
     #nav2{
-        gap: 10px;
+        padding: 2rem .5px;
+        gap: 5px;
+    }
+    #nav2 .serviceIcon div{
+        padding: .3rem;
     }
     #nav2 .serviceIcon{
-        font-size: .7rem;
+        font-size: .6rem;
         padding: .2rem;
     }
 }
+
+

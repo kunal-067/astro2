@@ -264,3 +264,45 @@ document.addEventListener('mousemove', e => {
   document.querySelector('.constellation').style.transform = `translate(${rx * 10}px, ${ry * 10}px)`;
   document.querySelector('.zodiac-ring').style.transform = `translateY(-50%) translate(${rx * -8}px, ${ry * -8}px)`;
 });
+
+
+
+/* ── Filter gems ── */
+function filterGems(category, btn) {
+  // Update active button
+  document.querySelectorAll('.gems-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Show / hide cards
+  const cards = document.querySelectorAll('#gemsGrid .gem-card');
+  cards.forEach(card => {
+    const cat = card.getAttribute('data-category');
+    const match = category === 'all' || cat === category;
+    if (match) {
+      card.classList.remove('hidden');
+      // Re-trigger reveal animation
+      card.classList.remove('visible');
+      setTimeout(() => card.classList.add('visible'), 30);
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+
+/* ── Scroll reveal (shared with site) ──
+   If agency-landing.html's IntersectionObserver is already
+   running, it will pick up .reveal elements automatically.
+   This guard avoids creating a duplicate observer. ── */
+if (!window.__revealObserver) {
+  window.__revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        window.__revealObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+}
+document.querySelectorAll('.gems-section .reveal').forEach(el => {
+  window.__revealObserver.observe(el);
+});

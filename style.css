@@ -293,8 +293,10 @@ a {
 }
 
 .nav-logo .logo-icon {
+    /* min-height: fit-content; */
+    /* min-width: fit-content; */
     width: 38px;
-    height: 38px;
+    /* height: 38px; */
     background: radial-gradient(circle at 40% 40%, var(--gold-light), var(--gold));
     border-radius: 50%;
     display: flex;
@@ -305,6 +307,10 @@ a {
     box-shadow: 0 0 14px rgba(201, 168, 76, 0.5);
     border-radius: 50%;
     overflow: hidden;
+}
+
+.logo-icon img {
+    border-radius: 50%;
 }
 
 .nav-menu {
@@ -494,7 +500,7 @@ a {
 }
 
 .hero-problems span {
-    font-size: 1.2rem;
+    font-size: 0.87rem;
     color: var(--muted);
     display: flex;
     align-items: center;
@@ -519,12 +525,14 @@ a {
     flex-wrap: wrap;
     animation: fade-up 0.8s 0.45s ease both;
 }
-.hero-btns .btn-call i{
+
+.hero-btns .btn-call i {
     color: #7f1414;
     font-weight: 900;
     font-size: 1.2rem;
 }
-.hero-btns .btn-wa i{
+
+.hero-btns .btn-wa i {
     color: #128c5e;
     font-weight: 900;
     font-size: 1.7rem;
@@ -654,7 +662,7 @@ a {
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 28px 20px;
+    padding: 20px;
     text-align: center;
     transition: var(--transition);
     cursor: default;
@@ -1451,11 +1459,22 @@ footer {
 }
 
 /* ========== FLOATING WA BUTTON ========== */
-.float-wa {
+.float-ct {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     bottom: 28px;
     right: 28px;
+    gap: 15px;
+
     z-index: 9000;
+}
+
+.float-wa {
+    /* position: fixed; */
+    /* bottom: 28px; */
+    /* right: 28px; */
+    /* z-index: 9000; */
     width: 58px;
     height: 58px;
     background: linear-gradient(135deg, #25d366, #128c5e);
@@ -1469,6 +1488,29 @@ footer {
     animation: float-pulse 3s ease-in-out infinite;
     text-decoration: none;
     color: #fff;
+}
+
+#float-ca {
+    background: linear-gradient(135deg, #d32525, #8c1212);
+    box-shadow: 0 4px 20px rgba(211, 37, 37, 0.5);
+    animation: float-pulse-ca 3s ease-in-out infinite;
+
+}
+
+#float-ca i {
+    font-size: 1.1rem;
+}
+
+@keyframes float-pulse-ca {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 20px rgba(211, 37, 37, 0.5), 0 0 0 0 rgba(211, 37, 37, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 6px 30px rgba(211, 37, 37, 0.6), 0 0 0 12px rgba(211, 37, 37, 0);
+    }
 }
 
 @keyframes float-pulse {
@@ -1593,6 +1635,10 @@ footer {
 }
 
 @media(max-width: 480px) {
+    #navbar .nav-logo {
+        font-size: 1rem;
+    }
+
     .problems-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1610,6 +1656,19 @@ footer {
     .hero-badge {
         font-size: 0.6rem;
         padding: 5px 10px;
+    }
+
+    .about-feat {
+        font-size: 0.78rem;
+        padding: 8px 6px;
+    }
+
+    .problem-card {
+        padding: 10px;
+    }
+
+    .problem-name {
+        font-size: 0.78rem;
     }
 
     .btn-call span {
