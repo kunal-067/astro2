@@ -1720,4 +1720,8 @@ footer {
     #hero{
         padding-bottom: 10px;
     }
+
+    .footer-brand .nav-logo {
+        font-size: 1.3rem;
+    }
 }
